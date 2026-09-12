@@ -6,6 +6,7 @@ import {
   Sparkles,
   Volume2,
 } from 'lucide-react';
+import AnimatedHeading from './AnimatedHeading';
 
 const FEATURES = [
   {
@@ -56,13 +57,14 @@ export default function Features() {
   return (
     <section id="features" className="border-b border-bg-border py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+        <div className="mb-12">
+          <AnimatedHeading
+            as="h2"
+            className="font-heading text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+            subtitle="Six core features designed to make code comprehension effortless."
+          >
             Everything you need to read code
-          </h2>
-          <p className="mt-3 text-base text-text-muted">
-            Six core features designed to make code comprehension effortless.
-          </p>
+          </AnimatedHeading>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

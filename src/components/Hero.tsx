@@ -1,4 +1,5 @@
 import { ArrowRight, Sparkles, Terminal } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import CodingBackground from './CodingBackground';
 import BorderTrailButton from './BorderTrailButton';
 
@@ -48,6 +49,25 @@ function highlightLine(line: string) {
 }
 
 export default function Hero() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative overflow-hidden border-b border-bg-border">
       {/* Animated coding background */}
@@ -57,21 +77,21 @@ export default function Hero() {
       <div className="pointer-events-none absolute left-1/4 top-0 h-96 w-96 rounded-full bg-accent-amber/5 blur-3xl" />
       <div className="pointer-events-none absolute right-1/4 top-20 h-80 w-80 rounded-full bg-accent-mint/5 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-28">
+      <div ref={ref} className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="animate-fade-slide-up">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-accent-mint/20 bg-accent-mint-soft px-3 py-1.5">
+          <div>
+            <div className={`mb-5 inline-flex items-center gap-2 rounded-full border border-accent-mint/20 bg-accent-mint-soft px-3 py-1.5 ${visible ? 'blur-in-active' : 'blur-in-init'}`}>
               <Sparkles className="h-3.5 w-3.5 text-accent-mint" />
               <span className="text-xs font-medium text-accent-mint">
                 AI-powered code explanations
               </span>
             </div>
-            <h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-text-primary sm:text-5xl lg:text-6xl">
+            <h1 className={`font-heading text-4xl font-bold leading-[1.1] tracking-tight text-text-primary sm:text-5xl lg:text-6xl ${visible ? 'blur-in-active' : 'blur-in-init'}`} style={visible ? { animationDelay: '0.05s' } : undefined}>
               Understand any code,
               <br />
               <span className="text-gradient-amber">step by step.</span>
             </h1>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-text-muted">
+            <p className={`mt-5 max-w-md text-base leading-relaxed text-text-muted ${visible ? 'blur-in-sub-active' : 'blur-in-sub-init'}`} style={visible ? { animationDelay: '0.2s' } : undefined}>
               Paste a code snippet and get a clear, numbered walkthrough of what
               every line does. Built for students and junior developers who want
               to learn, not just copy-paste.

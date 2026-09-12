@@ -4,6 +4,7 @@ import CodeInput from './CodeInput';
 import Walkthrough2D from './Walkthrough2D';
 import Scene3D from './Scene3D';
 import BorderTrailButton from './BorderTrailButton';
+import AnimatedHeading from './AnimatedHeading';
 import { AudioController } from '@/lib/audio';
 import { explainCode, type CodeStep, type Language } from '@/lib/explainCode';
 
@@ -48,13 +49,14 @@ export default function Demo() {
   return (
     <section id="demo" className="border-b border-bg-border py-16 lg:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+        <div className="mb-10">
+          <AnimatedHeading
+            as="h2"
+            className="font-heading text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+            subtitle="Paste any code snippet below and watch DoEasyPeasyCode break it down."
+          >
             Try the demo
-          </h2>
-          <p className="mt-3 text-base text-text-muted">
-            Paste any code snippet below and watch DoEasyPeasyCode break it down.
-          </p>
+          </AnimatedHeading>
         </div>
 
         <CodeInput

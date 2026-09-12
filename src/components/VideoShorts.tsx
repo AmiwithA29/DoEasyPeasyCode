@@ -1,4 +1,5 @@
 import { Play, Clock, Eye, ThumbsUp } from 'lucide-react';
+import AnimatedHeading from './AnimatedHeading';
 
 const SHORTS = [
   {
@@ -49,13 +50,14 @@ export default function VideoShorts() {
   return (
     <section id="shorts" className="border-b border-bg-border py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+        <div className="mb-10">
+          <AnimatedHeading
+            as="h2"
+            className="font-heading text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+            subtitle="Quick video lessons that explain one concept at a time."
+          >
             Learn in 2-minute shorts
-          </h2>
-          <p className="mt-3 text-base text-text-muted">
-            Quick video lessons that explain one concept at a time.
-          </p>
+          </AnimatedHeading>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
