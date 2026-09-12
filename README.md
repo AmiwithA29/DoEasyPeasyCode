@@ -491,10 +491,18 @@ Ideas, feedback, bug reports, and contributions are welcome.
 If you have an idea for a new visualization, programming concept, or learning interaction, feel free to open an issue or submit a pull request.
 
 ---
-
 # 📄 License
 
-Add an appropriate open-source license before distributing the repository publicly.
+**Proprietary — All Rights Reserved**
+
+Copyright © 2026 Ann.
+
+This project is proprietary software. The source code may be viewed for
+reference, but may not be copied, modified, distributed, reproduced, or
+used in another project without explicit written permission from the
+copyright holder.
+
+See the [`LICENSE`](LICENSE) file for details.
 
 ---
 
