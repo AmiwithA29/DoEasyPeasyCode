@@ -1,6 +1,7 @@
 import { ChevronDown, Loader2, Play, RotateCcw, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { LANGUAGES, type Language } from '@/lib/explainCode';
+import BorderTrailButton from './BorderTrailButton';
 
 const SAMPLES: Record<Language, string> = {
   javascript: `function fibonacci(n) {
@@ -146,10 +147,14 @@ export default function CodeInput({
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-3">
-          <button
+          <BorderTrailButton
             onClick={handleSubmit}
             disabled={loading || code.trim().length === 0}
-            className="inline-flex items-center gap-2 rounded-lg bg-accent-amber px-6 py-2.5 text-sm font-semibold text-bg transition-all hover:bg-accent-amber-hover hover:shadow-lg hover:shadow-accent-amber/20 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:shadow-none"
+            variant="amber"
+            size="md"
+            trailOnHover
+            trailOnClick
+            className="disabled:cursor-not-allowed disabled:opacity-40"
           >
             {loading ? (
               <>
@@ -162,7 +167,7 @@ export default function CodeInput({
                 Explain this code
               </>
             )}
-          </button>
+          </BorderTrailButton>
           {hasResults && (
             <button
               onClick={() => {

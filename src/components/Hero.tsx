@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles, Terminal } from 'lucide-react';
 import CodingBackground from './CodingBackground';
+import BorderTrailButton from './BorderTrailButton';
 
 const SAMPLE_CODE = `function fibonacci(n) {
   if (n <= 1) return n;
@@ -76,19 +77,17 @@ export default function Hero() {
               to learn, not just copy-paste.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#demo"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent-amber px-6 py-3 text-sm font-semibold text-bg transition-all hover:bg-accent-amber-hover hover:shadow-lg hover:shadow-accent-amber/20"
-              >
-                Try the demo
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#shorts"
-                className="inline-flex items-center gap-2 rounded-lg border border-bg-border bg-bg-surface px-6 py-3 text-sm font-semibold text-text-primary transition-all hover:border-accent-mint/30 hover:bg-bg-elevated"
-              >
-                Watch shorts
-              </a>
+              <BorderTrailButton variant="amber" size="lg" trailOnHover trailOnClick>
+                <a href="#demo" className="inline-flex items-center gap-2">
+                  Try the demo
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </BorderTrailButton>
+              <BorderTrailButton variant="outline" size="lg" trailOnHover trailOnClick>
+                <a href="#shorts" className="inline-flex items-center gap-2">
+                  Watch shorts
+                </a>
+              </BorderTrailButton>
             </div>
             <div className="mt-8 flex items-center gap-6 text-xs text-text-dim">
               <span className="flex items-center gap-1.5">

@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import CodeInput from './CodeInput';
 import Walkthrough2D from './Walkthrough2D';
 import Scene3D from './Scene3D';
+import BorderTrailButton from './BorderTrailButton';
 import { AudioController } from '@/lib/audio';
 import { explainCode, type CodeStep, type Language } from '@/lib/explainCode';
 
@@ -52,7 +53,7 @@ export default function Demo() {
             Try the demo
           </h2>
           <p className="mt-3 text-base text-text-muted">
-            Paste any code snippet below and watch CodeXplain break it down.
+            Paste any code snippet below and watch DoEasyPeasyCode break it down.
           </p>
         </div>
 
@@ -228,13 +229,17 @@ function PaywallOverlay({ onUnlock }: { onUnlock: () => void }) {
             </span>
             <span className="text-sm text-text-muted">one-time, per snippet</span>
           </div>
-          <button
+          <BorderTrailButton
             onClick={onUnlock}
-            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent-amber px-6 py-3 text-sm font-semibold text-bg transition-all hover:bg-accent-amber-hover hover:shadow-lg hover:shadow-accent-amber/20"
+            variant="amber"
+            size="lg"
+            trailOnHover
+            trailOnClick
+            className="mt-6"
           >
             <Lock className="h-4 w-4" />
             Simulate unlock
-          </button>
+          </BorderTrailButton>
           <p className="mt-3 text-xs text-text-dim">
             Demo mode — no real payment required
           </p>

@@ -1,5 +1,6 @@
 import { Code2, LogIn, Menu, UserPlus, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import BorderTrailButton from './BorderTrailButton';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,6 +18,14 @@ export default function Navbar() {
     { label: 'Shorts', href: '#shorts' },
     { label: 'Features', href: '#features' },
   ];
+
+  const goSignIn = () => {
+    window.location.hash = 'signin';
+  };
+
+  const goSignUp = () => {
+    window.location.hash = 'signup';
+  };
 
   return (
     <nav
@@ -49,14 +58,26 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <button className="inline-flex items-center gap-1.5 rounded-lg border border-bg-border bg-bg-surface px-4 py-2 text-sm font-medium text-text-primary transition-all hover:border-accent-mint/30 hover:bg-bg-elevated">
+          <BorderTrailButton
+            variant="outline"
+            size="sm"
+            trailOnHover
+            trailOnClick
+            onClick={goSignIn}
+          >
             <LogIn className="h-4 w-4" />
             Sign in
-          </button>
-          <button className="inline-flex items-center gap-1.5 rounded-lg bg-accent-amber px-4 py-2 text-sm font-semibold text-bg transition-all hover:bg-accent-amber-hover hover:shadow-lg hover:shadow-accent-amber/20">
+          </BorderTrailButton>
+          <BorderTrailButton
+            variant="amber"
+            size="sm"
+            trailOnHover
+            trailOnClick
+            onClick={goSignUp}
+          >
             <UserPlus className="h-4 w-4" />
             Sign up
-          </button>
+          </BorderTrailButton>
         </div>
 
         <button
@@ -85,11 +106,17 @@ export default function Navbar() {
             </a>
           ))}
           <div className="mt-2 flex gap-2">
-            <button className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-bg-border bg-bg-elevated px-4 py-2.5 text-sm font-medium text-text-primary">
+            <button
+              onClick={() => { goSignIn(); setOpen(false); }}
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-bg-border bg-bg-elevated px-4 py-2.5 text-sm font-medium text-text-primary"
+            >
               <LogIn className="h-4 w-4" />
               Sign in
             </button>
-            <button className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-accent-amber px-4 py-2.5 text-sm font-semibold text-bg">
+            <button
+              onClick={() => { goSignUp(); setOpen(false); }}
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-accent-amber px-4 py-2.5 text-sm font-semibold text-bg"
+            >
               <UserPlus className="h-4 w-4" />
               Sign up
             </button>

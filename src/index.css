@@ -72,3 +72,60 @@ button:focus-visible {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Border trail animation */
+.border-trail-wrap {
+  position: relative;
+}
+
+.border-trail-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--trail-angle, 0deg),
+    transparent 0deg,
+    transparent 270deg,
+    var(--trail-color, #F2B705) 320deg,
+    var(--trail-color, #F2B705) 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: trail-rotate 2s linear infinite;
+  pointer-events: none;
+}
+
+.border-trail-wrap:hover::before,
+.border-trail-wrap.trail-active::before {
+  opacity: 1;
+}
+
+@property --trail-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes trail-rotate {
+  to {
+    --trail-angle: 360deg;
+  }
+}
+
+/* Fallback for browsers without @property support */
+@supports not (background: conic-gradient(from 0deg, red, blue)) {
+  .border-trail-wrap::before {
+    background: linear-gradient(90deg, transparent, var(--trail-color, #F2B705), transparent);
+    animation: trail-fallback 2s linear infinite;
+  }
+}
+
+@keyframes trail-fallback {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
