@@ -495,7 +495,7 @@ If you have an idea for a new visualization, programming concept, or learning in
 
 **Proprietary — All Rights Reserved**
 
-Copyright © 2026 Ann.
+Copyright © 2026 Sneha Kumari.
 
 This project is proprietary software. The source code may be viewed for
 reference, but may not be copied, modified, distributed, reproduced, or
