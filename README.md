@@ -1,634 +1,504 @@
-DoEasyPeasyCode
-AI-Assisted Interactive Code Visualization & Learning Platform
-1. Project Overview
-DoEasyPeasyCode is an interactive web-based platform designed to make programming concepts easier to understand by transforming source code into visual, interactive, and AI-assisted explanations.
+# 🧠 DoEasyPeasyCode
 
-Traditional programming environments primarily present code as text. While this works for experienced developers, beginners and students often struggle to mentally visualize what is actually happening when a program executes.
+<p align="center">
+  <strong>See the code. Understand the logic. Explore the execution.</strong>
+</p>
 
-DoEasyPeasyCode addresses this problem by introducing a visual layer between source code and understanding.
+<p align="center">
+  <em>An AI-assisted interactive code visualization platform built to make programming concepts visual, intuitive, and easier to understand.</em>
+</p>
 
-Instead of requiring users to mentally simulate program execution, the platform aims to represent code through:
+<p align="center">
 
-Interactive 2D visualizations
+![React](https://img.shields.io/badge/React-2026-blue?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Fast-purple?logo=vite&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-3D-black?logo=three.js&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-Backend-green?logo=supabase&logoColor=white)
 
-Immersive 3D visualizations
+</p>
 
-AI-assisted code explanations
+---
 
-Visual representations of program structure and execution
+## ✨ What is DoEasyPeasyCode?
 
-Interactive learning-oriented interfaces
+**DoEasyPeasyCode** is a web-based learning and visualization platform that transforms programming code into **interactive visual representations**.
 
-The central idea behind the project is:
+Programming is usually taught through lines of code and static diagrams. The difficult part is that the actual execution of a program is **dynamic** — functions are called, variables change, conditions branch, data moves, and memory structures evolve.
 
-Don't just read the code. See how the code works.
+DoEasyPeasyCode adds a visual layer to that process.
 
-2. Problem Statement
-Programming education has a major gap between writing code and understanding what the code is actually doing.
+```text
+             CODE
+              │
+              ▼
+       ┌──────────────┐
+       │ Code Analysis│
+       └──────┬───────┘
+              │
+       ┌──────┴───────┐
+       ▼              ▼
+   ┌────────┐     ┌────────┐
+   │  2D    │     │  3D    │
+   │ Visual │     │ Visual │
+   └────┬───┘     └───┬────┘
+        │             │
+        └──────┬──────┘
+               ▼
+        🤖 AI Explanation
+               │
+               ▼
+          💡 Understanding
+```
 
-A student may understand the syntax of a recursive function, for example, but still struggle to understand:
+### 🎯 The core idea
 
-How function calls are created
+> **Don't just read what the code says — see what the code is doing.**
 
-How the call stack changes
+---
 
-Which function executes first
+# 🚀 Why DoEasyPeasyCode?
 
-How values move through the program
+A beginner can read this:
 
-Where execution returns
-
-How data structures change over time
-
-Why a particular output is produced
-
-The problem becomes even more significant with abstract concepts such as:
-
-Recursion
-
-Pointers and references
-
-Linked lists
-
-Trees
-
-Graphs
-
-Sorting algorithms
-
-Searching algorithms
-
-Memory allocation
-
-Nested loops
-
-Function execution
-
-Control flow
-
-These concepts are often taught using static diagrams or textual explanations.
-
-The learner is therefore forced to perform much of the visualization mentally.
-
-Core Problem
-Programming concepts are often invisible during execution, while beginners need visual representations to build accurate mental models.
-
-DoEasyPeasyCode attempts to solve this by converting invisible program behavior into something users can see, explore, and interact with.
-
-3. Proposed Solution
-DoEasyPeasyCode provides an interactive environment where users can work with code snippets and understand them through visual representations.
-
-The intended experience follows this pipeline:
-
-               SOURCE CODE
-                    │
-                    ▼
-             CODE ANALYSIS
-                    │
-                    ▼
-          PROGRAM STRUCTURE
-                    │
-          ┌─────────┴─────────┐
-          ▼                   ▼
-     2D VISUALIZATION     3D VISUALIZATION
-          │                   │
-          └─────────┬─────────┘
-                    ▼
-            AI EXPLANATION
-                    │
-                    ▼
-             USER UNDERSTANDING
-Instead of treating code as only a textual artifact, the platform treats it as a visualizable system.
-
-4. Core Concept
-The fundamental concept of the project is:
-
-Code → Structure → Visualization → Explanation → Understanding
-A user provides a code snippet.
-
-The system analyzes the code and identifies meaningful programming structures such as:
-
-Functions
-
-Variables
-
-Conditions
-
-Loops
-
-Function calls
-
-Data relationships
-
-Execution flow
-
-Structural relationships
-
-These structures can then be represented visually.
-
-The user can therefore understand the relationship between the original code and its behavior instead of looking at an isolated diagram.
-
-5. 2D Code Visualization
-The 2D visualization layer focuses on making program logic easy to follow.
-
-Depending on the type of code, visualization can represent:
-
-Control Flow
-Start
-  ↓
-Condition
- ├── True  → Process A
- └── False → Process B
-                  ↓
-                 End
-This allows users to understand how execution moves through a program.
-
-Function Relationships
-Functions can be represented as connected nodes showing which function calls another function.
-
-Recursion
-For recursive programs, the visualization can show the chain of calls:
-
-function(5)
-    ↓
-function(4)
-    ↓
-function(3)
-    ↓
-function(2)
-    ↓
-function(1)
-This makes recursive execution easier to understand than reading the same function repeatedly.
-
-Data Structures
-The platform can represent relationships between elements rather than displaying them only as text.
-
-For example:
-
-[10] → [20] → [30] → NULL
-can represent a linked list visually.
-
-6. 3D Code Visualization
-One of the distinctive aspects of DoEasyPeasyCode is its 3D visualization capability.
-
-The 3D environment is intended to provide a more immersive representation of programming concepts.
-
-Instead of representing structures only on a flat canvas, the platform can use a spatial environment to represent:
-
-Nodes
-
-Relationships
-
-Hierarchies
-
-Execution states
-
-Data structures
-
-Connected program components
-
-This can be particularly useful for concepts where relationships and spatial structure matter.
-
-For example, a tree can be represented as:
-
-             [10]
-            /    \
-          [5]    [20]
-         /  \       \
-       [2]  [7]     [30]
-A 3D environment can extend this concept by allowing the learner to inspect the structure spatially.
-
-The project uses technologies including Three.js and React Three Fiber to support the 3D visualization environment.
-
-7. AI-Assisted Code Understanding
-Another major component of the project is the use of Artificial Intelligence to assist with code understanding.
-
-The objective is not simply to generate code.
-
-Instead, AI can act as an explanation layer between the user's code and the visualization.
-
-For example, instead of simply telling the user:
-
-"This function is recursive."
-
-the system can explain:
-
-Why the function is recursive
-
-Where the recursive call occurs
-
-What the base condition does
-
-How the calls progress
-
-How execution eventually returns
-
-This makes the AI component educational rather than merely generative.
-
-AI + Visualization
-The stronger concept is the combination of:
-
-AI Explanation
-      +
-Code Analysis
-      +
-Visualization
-      ↓
-Interactive Learning
-The AI can help explain what the visualization represents, while the visualization helps users understand what the AI is describing.
-
-8. Target Users
-The primary target audience includes:
-
-Students
-Students learning:
-
-Programming fundamentals
-
-Data structures
-
-Algorithms
-
-Object-oriented programming
-
-Recursion
-
-Computer science concepts
-
-Beginners
-Users who understand basic syntax but struggle to understand program execution.
-
-Teachers
-Educators can potentially use visualizations as teaching aids for explaining difficult programming concepts.
-
-Developers
-Developers can use visualization to understand unfamiliar code or complex structures.
-
-9. Educational Value
-The platform is designed around a fundamental learning principle:
-
-Understanding should not depend entirely on mental simulation.
-
-Consider recursion.
-
-A textbook may show:
-
-factorial(5)
-and explain that the function calls itself.
-
-A visualization can instead show:
-
-factorial(5)
-      ↓
-factorial(4)
-      ↓
-factorial(3)
-      ↓
-factorial(2)
-      ↓
-factorial(1)
-      ↓
-    return
-      ↑
-factorial(2)
-      ↑
-factorial(3)
-      ↑
-factorial(4)
-      ↑
-factorial(5)
-The learner can now see the execution lifecycle rather than memorizing a definition.
-
-This is the central educational philosophy of DoEasyPeasyCode.
-
-10. User Experience
-The platform is designed around an interactive workflow.
-
-Step 1 — Enter Code
-The user provides or selects a code snippet.
-
-Step 2 — Analyze
-The system identifies the important structures and relationships in the code.
-
-Step 3 — Visualize
-The corresponding visualization is generated.
-
-The user can view the concept in:
-
-2D
-
-3D
-
-depending on the supported visualization.
-
-Step 4 — Understand
-The user can use AI-assisted explanations to understand the generated representation.
-
-Step 5 — Explore
-Instead of passively reading an explanation, the user can interact with the visual representation and investigate how the program works.
-
-11. Technology Stack
-The current project is built primarily using modern frontend technologies.
-
-Frontend
-React
-
-TypeScript
-
-Vite
-
-3D Visualization
-Three.js
-
-React Three Fiber
-
-@react-three/drei
-
-These technologies provide the foundation for rendering interactive 3D scenes inside the browser.
-
-UI / Styling
-Tailwind CSS
-
-Lucide React
-
-Tailwind provides utility-based styling, while Lucide provides interface icons.
-
-Backend / Data Infrastructure
-The project also includes:
-
-Supabase
-
-which can be used for application data, authentication, persistence, or other backend requirements as the product evolves.
-
-Development Tooling
-ESLint
-
-TypeScript ESLint
-
-PostCSS
-
-Vite React plugin
-
-12. High-Level System Architecture
-The project can be conceptually divided into several layers.
-
-┌───────────────────────────────────────┐
-│              USER INTERFACE           │
-│                                       │
-│  Code Input • Controls • Visualization│
-└───────────────────┬───────────────────┘
-                    │
-                    ▼
-┌───────────────────────────────────────┐
-│             CODE PROCESSING            │
-│                                       │
-│  Parsing • Structure • Relationships  │
-└───────────────────┬───────────────────┘
-                    │
-          ┌─────────┴─────────┐
-          ▼                   ▼
-┌──────────────────┐  ┌──────────────────┐
-│   2D ENGINE      │  │    3D ENGINE     │
-│                  │  │                  │
-│ Flow / Nodes /   │  │ Spatial Nodes /  │
-│ Relationships    │  │ Structures       │
-└────────┬─────────┘  └────────┬─────────┘
-         │                     │
-         └──────────┬──────────┘
-                    ▼
-           ┌─────────────────┐
-           │   AI LAYER      │
-           │                 │
-           │ Explanation &   │
-           │ Understanding   │
-           └─────────────────┘
-13. Design Philosophy
-The design of the project focuses on making technical concepts visually understandable without making the interface unnecessarily complicated.
-
-The interface follows a modern developer-oriented visual language, including:
-
-Dark interface
-
-High visual contrast
-
-Interactive elements
-
-Visual hierarchy
-
-Modern cards and panels
-
-Gradient/ambient visual elements
-
-Developer-focused controls
-
-Visualization-first presentation
-
-The design is intended to make the application feel closer to a modern interactive development environment than a traditional educational website.
-
-14. What Makes the Project Different?
-There are many resources that explain programming.
-
-There are also many tools that generate code.
-
-The distinguishing idea behind DoEasyPeasyCode is the combination of:
-
-Code + Visualization + AI
-Most learning resources primarily provide:
-
-Code
-+
-Text explanation
-DoEasyPeasyCode aims for:
-
-Code
-+
-Visual execution
-+
-Interactive structure
-+
-AI explanation
-The goal is to make the learner understand the relationship between the code and its behavior.
-
-15. Example Use Case
-Suppose a student submits:
-
+```javascript
 function factorial(n) {
-    if (n <= 1) return 1;
-    return n * factorial(n - 1);
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
 }
-A traditional editor simply displays the code.
+```
 
-DoEasyPeasyCode can conceptually transform this into:
+…but reading the code does not automatically create a correct mental model of the execution.
 
-                factorial(5)
-                     │
-                     ▼
-                factorial(4)
-                     │
-                     ▼
-                factorial(3)
-                     │
-                     ▼
-                factorial(2)
-                     │
-                     ▼
-                factorial(1)
-                     │
-                     ▼
-                  return 1
-The learner can then connect:
+The platform is designed to make concepts such as:
 
-Source Code
-     ↓
+- 🔁 recursion
+- 📚 call stacks
+- 🔀 control flow
+- 🧩 data structures
+- 🔗 relationships between program components
+- 🧠 variable/state changes
+- ⚙️ algorithm execution
+
+more tangible through visualization.
+
+Instead of asking a learner to mentally simulate the program, the goal is to let them **observe and explore it**.
+
+---
+
+# 🌟 Key Features
+
+## 🎨 Interactive 2D Visualization
+
+Represent program logic through visual structures such as:
+
+- Flow and execution paths
+- Nodes and relationships
+- Function interactions
+- Data structures
+- Algorithm steps
+- Program states
+
+Example:
+
+```text
+Start
+  │
+  ▼
+Condition?
+ ├───────────────┐
+ │               │
+ ▼               ▼
+TRUE            FALSE
+ │               │
+ ▼               ▼
+Process A      Process B
+ │               │
+ └───────┬───────┘
+         ▼
+        End
+```
+
+The purpose is to turn abstract program logic into something that can be **seen rather than imagined**.
+
+---
+
+## 🧊 Interactive 3D Visualization
+
+DoEasyPeasyCode also explores programming concepts in an interactive **3D environment**.
+
+3D visualization can be useful when the concept involves:
+
+- 🌳 hierarchical structures
+- 🔗 connected nodes
+- 🕸️ graphs and relationships
+- 📦 objects and entities
+- 🧭 spatial exploration
+
+The project uses **Three.js** and **React Three Fiber** to support browser-based 3D experiences.
+
+---
+
+## 🤖 AI-Assisted Code Understanding
+
+AI is used as an **understanding layer**, not simply as a code generator.
+
+The intended experience is:
+
+```text
+User Code
+   ↓
+AI understands the code
+   ↓
+Identifies important concepts
+   ↓
+Explains the logic
+   ↓
+Visualization helps the user see it
+```
+
+For example, for recursion, an explanation can connect:
+
+```text
+Recursive Function
+       ↓
 Recursive Call
-     ↓
-New Stack Frame
-     ↓
+       ↓
+New Call / Stack Frame
+       ↓
 Base Condition
-     ↓
+       ↓
 Return
-     ↓
+       ↓
 Previous Calls Resolve
-This is much closer to how a programmer actually reasons about execution.
+```
 
-16. Future Scope
-The project can be extended into a much broader programming visualization platform.
+This connects the **textual explanation** with the **visual execution**.
 
-Potential future capabilities include:
+---
 
-Algorithm Visualization
-Bubble Sort
+# 🧠 Learning Philosophy
 
-Merge Sort
+The project is based on a simple principle:
 
-Quick Sort
+> **Understanding is stronger when the learner can build a mental model instead of memorizing a definition.**
 
-Binary Search
+Consider a linked list.
 
-BFS
+Text:
 
-DFS
+```text
+A node stores data and a reference to the next node.
+```
 
-Dijkstra's Algorithm
+Visual:
 
-Data Structure Visualization
-Arrays
+```text
+┌───────┐     ┌───────┐     ┌───────┐
+│  10   │ ──► │  20   │ ──► │  30   │ ──► NULL
+└───────┘     └───────┘     └───────┘
+```
 
-Linked Lists
+The second representation exposes the **relationship** immediately.
 
-Stacks
+That is the kind of mental model DoEasyPeasyCode is designed to encourage.
 
-Queues
+---
 
-Trees
+# 🛠️ Technology Stack
 
-Binary Search Trees
+| Layer | Technology |
+|---|---|
+| ⚛️ Frontend | React |
+| 📘 Language | TypeScript |
+| ⚡ Build Tool | Vite |
+| 🧊 3D Rendering | Three.js |
+| 🎮 3D React Integration | React Three Fiber |
+| 🧰 3D Utilities | Drei |
+| 🎨 Styling | Tailwind CSS |
+| 🔐 Backend / Data | Supabase |
+| 🧩 Icons | Lucide React |
+| ✅ Code Quality | ESLint |
 
-Heaps
+---
 
-Graphs
+# 🏗️ High-Level Architecture
 
-Hash Tables
+```text
+┌─────────────────────────────────────────┐
+│               USER INTERFACE            │
+│                                         │
+│  Code Input • Controls • AI • Visuals  │
+└────────────────────┬────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────┐
+│             CODE PROCESSING             │
+│                                         │
+│  Structure • Logic • Relationships      │
+└────────────────────┬────────────────────┘
+                     │
+          ┌──────────┴──────────┐
+          ▼                     ▼
+┌──────────────────┐   ┌──────────────────┐
+│   2D VISUALIZER  │   │   3D VISUALIZER  │
+│                  │   │                  │
+│ Flow / Nodes /   │   │ Spatial Nodes /  │
+│ Relationships    │   │ Structures       │
+└─────────┬────────┘   └─────────┬────────┘
+          │                      │
+          └──────────┬───────────┘
+                     ▼
+            ┌─────────────────┐
+            │   AI LAYER      │
+            │                 │
+            │ Explanation /   │
+            │ Understanding   │
+            └─────────────────┘
+```
 
-Execution Visualization
-Call stack
+---
 
-Variable state
+# 🎓 Educational Use Cases
 
-Memory references
+### 🔁 Recursion
 
-Function execution
+Visualize:
 
-Loop iterations
+```text
+factorial(5)
+     ↓
+factorial(4)
+     ↓
+factorial(3)
+     ↓
+factorial(2)
+     ↓
+factorial(1)
+     ↓
+   return
+     ↑
+   resolve
+```
 
-Conditional branching
+This makes the call-stack behavior easier to reason about.
 
-AI Features
-Natural-language code explanation
+### 🔀 Control Flow
 
-"Explain this line" functionality
+Show how `if`, `else`, loops, and branching affect execution.
 
-AI-generated visualizations
+### 🧩 Data Structures
 
-Error explanation
+Potential visual representations include:
 
-Complexity explanation
+- Arrays
+- Linked Lists
+- Stacks
+- Queues
+- Trees
+- Graphs
+- Heaps
+- Hash structures
 
-Beginner mode
+### ⚙️ Algorithms
 
-Advanced developer mode
+Potential visualizations include:
 
-Interactive AI tutor
+- Sorting
+- Searching
+- Traversal
+- Graph algorithms
+- Step-by-step algorithm execution
 
-Learning Features
-Step-by-step execution
+---
 
-Playback controls
+# 👥 Target Audience
 
-Pause / Resume
+### 🎓 Students
 
-Execution timeline
+For learners studying programming, data structures, and algorithms.
 
-Interactive quizzes
+### 🌱 Beginners
 
-Practice problems
+For people who understand basic syntax but struggle to understand execution.
 
-Progress tracking
+### 👨‍🏫 Educators
 
-17. Long-Term Vision
-The long-term vision of DoEasyPeasyCode is to become a visual programming learning environment where users can understand software concepts by interacting with them rather than relying solely on textual explanations.
+For teachers who want visual material for explaining abstract programming concepts.
 
-The platform can eventually evolve from a simple visualization tool into an interactive learning ecosystem:
+### 💻 Developers
 
-                  CODE
-                   │
-                   ▼
-              UNDERSTAND
-                   │
-          ┌────────┴────────┐
-          ▼                 ▼
-       VISUALIZE          ASK AI
-          │                 │
-          └────────┬────────┘
-                   ▼
-                EXPLORE
-                   │
-                   ▼
-                PRACTICE
-                   │
-                   ▼
-              MASTER CONCEPT
-The fundamental objective remains the same:
+For developers who want to inspect relationships and execution patterns in unfamiliar code.
 
-Make programming concepts visible, interactive, and easier to reason about.
+---
 
-18. Project Status
-DoEasyPeasyCode is currently being developed as an interactive web application with a focus on:
+# 🔮 Future Scope
 
-Modern frontend architecture
+The project can evolve into a broader **visual programming learning environment**.
 
-Interactive code experiences
+### Visualization
 
-2D visualization
+- [ ] Step-by-step execution
+- [ ] Execution timeline
+- [ ] Play / pause / replay
+- [ ] Variable-state visualization
+- [ ] Memory/reference visualization
+- [ ] Advanced 3D structures
+- [ ] More algorithm visualizations
 
-3D visualization
+### Data Structures
 
-AI-assisted code understanding
+- [ ] Linked Lists
+- [ ] Stacks & Queues
+- [ ] Trees
+- [ ] Graphs
+- [ ] Heaps
+- [ ] Hash Tables
 
-Educational usability
+### AI
 
-The architecture is designed to allow additional visualization modules and learning features to be introduced over time.
+- [ ] Explain selected line
+- [ ] Beginner / advanced explanations
+- [ ] AI-generated visualizations
+- [ ] Complexity explanations
+- [ ] Error explanations
+- [ ] Interactive AI tutor
 
-19. Conclusion
-DoEasyPeasyCode addresses a fundamental difficulty in programming education: code is textual, but program behavior is dynamic and structural.
+### Learning
 
-Reading code does not always provide an accurate mental picture of execution.
+- [ ] Interactive quizzes
+- [ ] Practice problems
+- [ ] Learning progress
+- [ ] Concept-based challenges
 
-By combining code analysis, interactive 2D visualization, 3D environments, and AI-assisted explanations, DoEasyPeasyCode attempts to bridge this gap.
+---
 
-The project is built around a simple but powerful idea:
+# 💻 Getting Started
 
-If a programming concept is difficult to imagine, visualize it.
-Rather than asking learners to memorize how a concept works, the platform aims to help them see why it works.
+## 1. Clone the repository
 
-That makes DoEasyPeasyCode not just a code visualization website, but a potential interactive visual learning platform for programming and computer science.
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd DoEasyPeasyCode
+```
+
+## 2. Install dependencies
+
+```bash
+npm install
+```
+
+## 3. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal.
+
+---
+
+# 📁 Project Structure
+
+A simplified view of the application:
+
+```text
+DoEasyPeasyCode/
+│
+├── public/
+│
+├── src/
+│   ├── components/
+│   ├── ...
+│
+├── package.json
+├── vite.config.*
+├── tsconfig.*
+└── README.md
+```
+
+> The structure may evolve as new visualization modules and AI capabilities are added.
+
+---
+
+# 🗺️ Product Vision
+
+DoEasyPeasyCode is designed to move programming education from:
+
+```text
+READ → MEMORIZE → REPEAT
+```
+
+towards:
+
+```text
+WRITE → VISUALIZE → EXPLORE → UNDERSTAND
+```
+
+The long-term goal is to create a platform where programming concepts are not only explained but **experienced interactively**.
+
+---
+
+# 💡 What Makes It Different?
+
+There are plenty of code editors.
+
+There are plenty of AI coding assistants.
+
+There are plenty of programming tutorials.
+
+The opportunity here is the combination:
+
+```text
+             ┌──────────┐
+             │   CODE   │
+             └────┬─────┘
+                  │
+       ┌──────────┼──────────┐
+       ▼          ▼          ▼
+   🤖 AI       🎨 2D       🧊 3D
+ Explanation  Visuals     Visuals
+       │          │          │
+       └──────────┼──────────┘
+                  ▼
+          🧠 UNDERSTANDING
+```
+
+The platform focuses on the **relationship between code and behavior**, rather than treating code as text alone.
+
+---
+
+# 📌 Project Status
+
+🚧 **DoEasyPeasyCode is actively under development.**
+
+The current project direction focuses on building the core experience around:
+
+- Interactive code visualization
+- 2D visual representations
+- 3D visual environments
+- AI-assisted explanations
+- Modern developer-oriented UI
+
+Features and visualization modules will continue to evolve as the platform develops.
+
+---
+
+# 🤝 Contributing
+
+Ideas, feedback, bug reports, and contributions are welcome.
+
+If you have an idea for a new visualization, programming concept, or learning interaction, feel free to open an issue or submit a pull request.
+
+---
+
+# 📄 License
+
+Add an appropriate open-source license before distributing the repository publicly.
+
+---
+
+<p align="center">
+  <strong>DoEasyPeasyCode</strong><br>
+  <em>Make code visible. Make logic understandable.</em>
+</p>
